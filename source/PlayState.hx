@@ -649,8 +649,9 @@ class PlayState extends MusicBeatState
 		blammedLightsBlack.alpha = 0.0;
 		#end
 
-		var gfVersion:String = SONG.player3;
-		if(gfVersion == null || gfVersion.length < 1) {
+		var gfVersion:String = "gf";
+		//if(gfVersion == null || gfVersion.length < 1) {
+			
 			switch (curStage)
 			{
 				case 'limo':
@@ -660,10 +661,25 @@ class PlayState extends MusicBeatState
 				case 'school' | 'schoolEvil':
 					gfVersion = 'gf-pixel';
 				default:
-					gfVersion = 'gf';
+
 			}
+			switch (ClientPrefs.scs)
+			{
+				case 0:
+					gfVersion = 'gf';
+				case 1:
+					gfVersion = 'ruby';
+				case 2:
+					gfVersion = 'nrmgf';
+				case 3:
+					gfVersion = 'yuri';
+				case 4:
+					gfVersion = 'poppy';
+			}
+
+			trace(gfVersion);
 			SONG.player3 = gfVersion; //Fix for the Chart Editor
-		}
+		//}
 		
 		add(backgroundGroup);
 

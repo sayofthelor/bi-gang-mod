@@ -9,6 +9,7 @@ import Controls;
 class ClientPrefs {
 	//TO DO: Redo ClientPrefs in a way that isn't too stupid
 	public static var downScroll:Bool = false;
+	public static var scs:Int = 0;
 	public static var middleScroll:Bool = false;
 	public static var showFPS:Bool = true;
 	public static var flashing:Bool = true;
@@ -101,6 +102,12 @@ class ClientPrefs {
 	public static function loadPrefs() {
 		if(FlxG.save.data.downScroll != null) {
 			downScroll = FlxG.save.data.downScroll;
+		}
+		if(ClientPrefs.scs < 0) {
+			ClientPrefs.scs == 0;
+		}
+		if(ClientPrefs.scs > 4) {
+			ClientPrefs.scs == 0;
 		}
 		if(FlxG.save.data.middleScroll != null) {
 			middleScroll = FlxG.save.data.middleScroll;
