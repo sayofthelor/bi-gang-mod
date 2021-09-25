@@ -1154,8 +1154,8 @@ class SpeakerCSSubstate extends MusicBeatSubstate
 				optionText.screenCenter(X);
 				optionText.forceX = optionText.x;
 			} else {
-				optionText.x += 300;
-				optionText.forceX = 300;
+				optionText.screenCenter(X);
+				optionText.forceX = optionText.x;
 			}
 			optionText.yMult = 90;
 			optionText.targetY = i;
@@ -1171,11 +1171,15 @@ class SpeakerCSSubstate extends MusicBeatSubstate
 				}
 
 				if(useCheckbox) {
-					var checkbox:CheckboxThingie = new CheckboxThingie(optionText.x - 105, optionText.y, false);
-					checkbox.sprTracker = optionText;
-					checkboxArray.push(checkbox);
-					checkboxNumber.push(i);
-					add(checkbox);
+					//var checkbox:CheckboxThingie = new CheckboxThingie(optionText.x - 105, optionText.y, false);
+					//checkbox.sprTracker = optionText;
+					//checkboxArray.push(checkbox);
+					//checkboxNumber.push(i);
+					//add(checkbox);
+					var valueText:AttachedText = new AttachedText('0', optionText.width + 80);
+					valueText.sprTracker = optionText;
+					grpTexts.add(valueText);
+					textNumber.push(i);
 				} else {
 					var valueText:AttachedText = new AttachedText('0', optionText.width + 80);
 					valueText.sprTracker = optionText;
@@ -1262,7 +1266,7 @@ class SpeakerCSSubstate extends MusicBeatSubstate
 						MusicBeatState.switchState(new MainMenuState());
 				}
 				FlxG.sound.play(Paths.sound('scrollMenu'));
-				trace(ClientPrefs.scs);
+				trace("ClientPrefs.scs = "+ClientPrefs.scs);
 				reloadValues();
 			}
 		} else {
