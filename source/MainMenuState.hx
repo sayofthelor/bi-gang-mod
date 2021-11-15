@@ -100,44 +100,45 @@ class MainMenuState extends MusicBeatState
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 		}
 
+		var funValue:Int = FlxG.random.int(1, 16);
 		FlxG.camera.follow(camFollowPos, null, 1);
-		switch (FlxG.random.int(1, 16)): {
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "", 12);
+		switch (funValue) {
 			case 1:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 			case 2:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Lemmy Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Lemmy Engine v" + psychEngineVersion, 12);
 			case 3:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Lore Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Lore Engine v" + psychEngineVersion, 12);
 			case 4:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Kade Engine v1.2", 12)
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Kade Engine v1.2", 12);
 			case 5:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Ubuntu 20.04", 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Ubuntu 20.04", 12);
 			case 6:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Dave Engine :troll:", 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Dave Engine :troll:", 12);
 			case 7:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Balls Engine (kek)", 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Balls Engine (kek)", 12);
 			case 8:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Base Engine, get fucked", 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Base Engine, get fucked", 12);
 			case 9:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Sylvie Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Sylvie Engine v" + psychEngineVersion, 12);
 			case 10:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Ryan Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Ryan Engine v" + psychEngineVersion, 12);
 			case 11:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Fuck You Engine v6.9", 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Fuck You Engine v6.9", 12);
 			case 12:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Punika Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Punika Engine v" + psychEngineVersion, 12);
 			case 13:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Cosmic Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Cosmic Engine v" + psychEngineVersion, 12);
 			case 14:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Kenny Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Kenny Engine v" + psychEngineVersion, 12);
 			case 15:
-				var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Glitch Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Glitch Engine v" + psychEngineVersion, 12);
 			case 16:
-				var versionShit:FlxText = new FlxText(12, FLxG.height - 44, 0, "Bacon Engine v" + psychEngineVersion, 12);
+				versionShit = new FlxText(12, FlxG.height - 44, 0, "Bacon Engine v" + psychEngineVersion, 12);
 		}
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
