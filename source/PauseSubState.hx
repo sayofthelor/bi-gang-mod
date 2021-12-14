@@ -85,6 +85,17 @@ class PauseSubState extends MusicBeatSubstate
 		botplayText.visible = PlayState.cpuControlled;
 		add(botplayText);
 
+		var pauseImg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("pause"));
+		trace("pause shit loaded");
+		pauseImg.scrollFactor.set();
+		pauseImg.scale.set(0.25, 0.25);
+		pauseImg.offset.set(FlxG.width-215, FlxG.height-84);
+		pauseImg.x = FlxG.width-215;
+		pauseImg.y = FlxG.height-84;
+		pauseImg.updateHitbox();
+		add(pauseImg);
+		trace("pause shit deployed");
+
 		blueballedTxt.alpha = 0;
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
